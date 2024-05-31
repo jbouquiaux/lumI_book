@@ -18,11 +18,11 @@ from lineshape_slider import get_plotly_lineshape
 %matplotlib inline
 ```
 ```{code-cell}
-get_plotly_lineshape(slider="frequency")
+get_plotly_lineshape(slider="frequency",num_step=10)
 ```
 
 ```{code-cell}
-get_plotly_lineshape(slider="Delta_Q")
+get_plotly_lineshape(slider="Delta_Q",num_step=10)
 ```
 
 
