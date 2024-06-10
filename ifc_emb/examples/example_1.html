@@ -198,7 +198,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lumi/theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lumi/theory_nb.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lumi/lesson_lumi.html"><span class="math notranslate nohighlight">\(\Delta\)</span>SCF constrained occupation method and Configuration coordinate diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lumi/lesson_lumiwork.html">Automatazing the ab-initio <span class="math notranslate nohighlight">\(\Delta\)</span>SCF procedure ; the LumiWork workflow</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lumi/lesson_lumi_examples.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lumi/examples/example_1.html">Example 1</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -535,27 +539,27 @@ ddb_ucell_to_phonopy_supercell(unit_ddb=None, unit_ddb_filepath=None, nac=True) 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method from_phonopy_instances in module abipy.embedding.embedding_ifc:
 
-from_phonopy_instances(phonopy_pristine, phonopy_defect, structure_defect_wo_relax, main_defect_coords_in_pristine, main_defect_coords_in_defect, substitutions_list: list = None, vacancies_list: list = None, interstitial_list: list = None, tol_mapping=0.01, cut_off_mode=&#39;auto&#39;, rc_1=None, rc_2=None, factor_ifc=1, verbose=0, asr=True) -&gt; phonopy.api_phonopy.Phonopy class method of abipy.embedding.embedding_ifc.Embedded_phonons
+from_phonopy_instances(phonopy_pristine, phonopy_defect, structure_defect_wo_relax, main_defect_coords_in_pristine, main_defect_coords_in_defect, substitutions_list: &#39;list&#39; = None, vacancies_list: &#39;list&#39; = None, interstitial_list: &#39;list&#39; = None, tol_mapping=0.01, cut_off_mode=&#39;auto&#39;, rc_1=None, rc_2=None, factor_ifc=1, verbose=0, asr=True) -&gt; &#39;Phonopy&#39; class method of abipy.embedding.embedding_ifc.Embedded_phonons
     Args:
         phonopy_pristine: Phonopy object of the pristine structure
-        phonopy_defect  : Phonopy object of the defect structure
-        structure_defect_wo_relax : Supercell structure associated to the defect structure, but without relaxation. Needed for an easier mapping.
+        phonopy_defect: Phonopy object of the defect structure
+        structure_defect_wo_relax: Supercell structure associated to the defect structure, but without relaxation. Needed for an easier mapping.
             Should corresponds to order of phonopy_defect structure!
-        main_defect_coords_in_pristine : Main coordinates of the defect in pristine structure, if defect complex, can be set to the
+        main_defect_coords_in_pristine: Main coordinates of the defect in pristine structure, if defect complex, can be set to the
             center of mass of the complex
         main_defect_coords_in_defect : Main coordinates of the defect in defect structure, if defect complex, can be set to the
             center of mass of the complex
-        substitutions_list : List of substitutions infos [index,specie], ex : [[0, &quot;Eu&quot;],[1,&quot;N&quot;]]
-        vacancies_list : List of indices where the vacancies are, ex: [13,14]
-        interstitial_list : List of interstitial infos [specie, cart_coord], ex [[&#39;Eu&#39;,[0,0,0]],[&#39;Ce&#39;,&#39;[0,0,3]&#39;]]
-        tol_mapping : Tolerance in angstrom for the mapping between structures
-        cut_off_mode : Cut off mode for the radii of the sphere centered around the defect (rc_2). if &#39;auto&#39; : the code tries to find the largest sphere 
+        substitutions_list: List of substitutions infos [index,specie], ex : [[0, &quot;Eu&quot;],[1,&quot;N&quot;]]
+        vacancies_list: List of indices where the vacancies are, ex: [13,14]
+        interstitial_list: List of interstitial infos [specie, cart_coord], ex [[&#39;Eu&#39;,[0,0,0]],[&#39;Ce&#39;,&#39;[0,0,3]&#39;]]
+        tol_mapping: Tolerance in angstrom for the mapping between structures
+        cut_off_mode: Cut off mode for the radii of the sphere centered around the defect (rc_2). if &#39;auto&#39; : the code tries to find the largest sphere 
             inscribed in the defect supercell. If &#39;manual&#39; :  rc_1 and rc_2 should be provided.
-        rc_1 : Radii of the sphere centered around the defect outside which the IFCs are set to zero, allows to get sparse matrix. 
-        rc_2 : Radii of the sphere centered around the defect where the IFCs of the defect computation are included 
-        factor_ifc : Multiply the IFCs inside the sphere of radii rc_2 by factor_ifc, usefull to introduce fictious high-frequency local mode 
+        rc_1: Radii of the sphere centered around the defect outside which the IFCs are set to zero, allows to get sparse matrix. 
+        rc_2: Radii of the sphere centered around the defect where the IFCs of the defect computation are included 
+        factor_ifc: Multiply the IFCs inside the sphere of radii rc_2 by factor_ifc, usefull to introduce fictious high-frequency local mode 
         verbose : Print explicitely all the IFCs replacements 
-        asr : If True, re-enforce acoustic sum rule after IFCs embedding, following eq. (S4) of https://pubs.acs.org/doi/10.1021/acs.chemmater.3c00537
+        asr: If True, re-enforce acoustic sum rule after IFCs embedding, following eq. (S4) of https://pubs.acs.org/doi/10.1021/acs.chemmater.3c00537
     
     Returns:
         A new phonopy object with the embedded structure and embedded IFCs.
@@ -630,7 +634,7 @@ from_phonopy_instances(phonopy_pristine, phonopy_defect, structure_defect_wo_rel
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of atoms in the pristine supercell      : 128
 Number of atoms in the defective supercell     : 15
 Defect infos
-    Vacancies :
+    Vacancies:
        64, [1.97007526 1.39305357 3.41227044], O1 removed
 Mapping after structure manipulation           : 15/15
 
