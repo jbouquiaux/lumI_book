@@ -19,4 +19,7 @@ parts:
   chapters:
   - file: lumi/theory.md
   - file: lumi/theory_nb.ipynb
-  - file: lumi/lesson_lumi.md  
+  - file: lumi/lesson_lumiwork.md
+  - file: lumi/lesson_lumi_examples.md
+    sections:
+    - file: lumi/examples/example_1.md
