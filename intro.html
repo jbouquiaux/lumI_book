@@ -65,7 +65,7 @@
     <link rel="icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="IFCs embedding, theory" href="ifc_emb/theory.html" />
+    <link rel="next" title="Theory" href="lumi/theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +183,18 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">IFCs embedding</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Luminescence lineshape of point defects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lumi/theory.html">Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lumi/lesson_lumiwork.html">Automatazing the ab-initio <span class="math notranslate nohighlight">\(\Delta\)</span>SCF procedure ; the LumiWork workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lumi/lesson_post_process_1.html">Post-proccessing of a LumiWork, effective phonon mode model.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lumi/lesson_multi_phonons.html">Post-proccessing of a LumiWork, multi phonon mode model.</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lumi/lesson_lumi_examples.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="lumi/examples/example_1.html">Example 1</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IFCs embedding</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ifc_emb/theory.html">IFCs embedding, theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ifc_emb/lesson_ifc_emb_abinitio.html">ab-initio computations</a></li>
@@ -192,16 +203,6 @@
 <li class="toctree-l2"><a class="reference internal" href="ifc_emb/examples/example_1.html">Example 1 : vacancy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifc_emb/examples/example_2.html">Example 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ifc_emb/examples/example_3.html">Example 1</a></li>
-</ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Luminescence lineshape of point defects</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lumi/theory.html">Theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lumi/theory_nb.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lumi/lesson_lumiwork.html">Automatazing the ab-initio <span class="math notranslate nohighlight">\(\Delta\)</span>SCF procedure ; the LumiWork workflow</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="lumi/lesson_lumi_examples.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="lumi/examples/example_1.html">Example 1</a></li>
 </ul>
 </details></li>
 </ul>
@@ -416,8 +417,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcs-embedding">IFCs embedding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luminescence-lineshape">Luminescence lineshape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcs-embedding">IFCs embedding</a></li>
 </ul>
             </nav>
         </div>
@@ -439,13 +440,13 @@ This book contains notebook-based documentation, tutorials, and examples for the
 <li><p><a class="reference external" href="http://abinit.github.io/abipy/flow_gallery/index.html">AbiPy flow gallery</a></p></li>
 <li><p><a class="reference external" href="https://matgenb.materialsvirtuallab.org">Matgenb website</a></p></li>
 </ul>
+<section id="luminescence-lineshape">
+<h2>Luminescence lineshape<a class="headerlink" href="#luminescence-lineshape" title="Link to this heading">#</a></h2>
+<p>This chapter discusses how to compute the (phonon-resolved) luminescence lineshape of point defect. After an intial <a class="reference internal" href="lumi/theory.html"><span class="std std-doc">theory section</span></a>, the abinit first-principle computations (launched with the LumiWork abipy workflow) needed are explained and detailed in <a class="reference internal" href="lumi/lesson_lumiwork.html"><span class="std std-doc">the lumiwork worflowsection</span></a>. Then, it is shown how to get a first quick post-processing and an approximation of the luminescence lineshape following a 1D model in <a class="reference internal" href="lumi/lesson_post_process_1.html"><span class="std std-doc">lumiwork postprocessing section</span></a>. Finally, the computation of phonon-resolved luminescence lineshape is explained in the <a class="reference internal" href="lumi/lesson_multi_phonons.html"><span class="std std-doc">phonon resolved spectra section</span></a>.</p>
+</section>
 <section id="ifcs-embedding">
 <h2>IFCs embedding<a class="headerlink" href="#ifcs-embedding" title="Link to this heading">#</a></h2>
 <p>This chapter discusses how to obtain phonon modes in extended point defect system with abinit and abipy. After an intial <a class="reference internal" href="#"><span class="xref myst">theory section</span></a>, the abinit first-principle computations (launched with abipy workflow) needed are explained and detailed in <a class="reference internal" href="#"><span class="xref myst">…</span></a>. Then, the implementation of the embedding procedure per see is presented in section <a class="reference internal" href="#"><span class="xref myst">…</span></a>. Finally, a series of example are shown, covering different point defect types (vacancy, substitution, interstitial, or combination).</p>
-</section>
-<section id="luminescence-lineshape">
-<h2>Luminescence lineshape<a class="headerlink" href="#luminescence-lineshape" title="Link to this heading">#</a></h2>
-<p>This chapter discusses how to compute the (phonon-resolved) luminescence lineshape of point defect. After an intial <a class="reference internal" href="#"><span class="xref myst">theory section</span></a>, the abinit first-principle computations (launched with the LumiWork abipy workflow) needed are explained and detailed in <a class="reference internal" href="#"><span class="xref myst">…</span></a>. Then, it is shown how to get a first quick post-processing and an approximation of the luminescence lineshape following a 1D model. Finally, the computation of phonon-resolved luminescence lineshape is explained in <a class="reference internal" href="#"><span class="xref myst">…</span></a>.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -484,11 +485,11 @@ This book contains notebook-based documentation, tutorials, and examples for the
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="ifc_emb/theory.html"
+       href="lumi/theory.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">IFCs embedding, theory</p>
+        <p class="prev-next-title">Theory</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,8 +509,8 @@ This book contains notebook-based documentation, tutorials, and examples for the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcs-embedding">IFCs embedding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luminescence-lineshape">Luminescence lineshape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ifcs-embedding">IFCs embedding</a></li>
 </ul>
   </nav></div>
 

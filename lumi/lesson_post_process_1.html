@@ -1,0 +1,1323 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Post-proccessing of a LumiWork, effective phonon mode model. &#8212; Lumi Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"TeX": {"Macros": {"*": "{\\dagger}", "ra": "{\\rangle}", "la": "{\\langle}", "bm": ["{\\boldsymbol #1}", 1], "mcL": "{\\mathcal{L}}", "mcG": "{\\mathcal{G}}", "mcR": "{\\mathcal{R}}", "mcS": "{\\mathcal{S}}", "mcC": "{\\mathcal{C}}", "mcO": "{\\mathcal{O}}", "KS": "{\\text{KS}}", "eph": "{\\text{e-ph}}", "ee": "{\\epsilon}", "phph": "{\\text{ph-ph}}", "FM": "{\\text{FM}}", "DW": "{\\text{DW}}", "QP": "{\\text{QP}}", "BZ": "{\\text{BZ}}", "sign": "{\\text{sign}}", "xc": "{\\text{xc}}", "tchi": "{\\tilde\\chi}", "rr": "{\\bf r}", "RR": "{\\bf R}", "tt": "{\\bf t}", "GG": "{\\bf G}", "kk": "{\\bf k}", "qq": "{\\bf q}", "kq": "{\\kk + \\qq}", "qG": "{\\bf q + G}", "kG": "{\\bf k + G}", "kmq": "{\\kk - \\qq}", "kpq": "{\\kk + \\qq}", "kpG": "{\\kk + \\GG}", "qpG": "{\\qq + \\GG}", "nk": "{n \\kk}", "mk": "{, \\kk}", "nks": "{n \\kk\\sigma}", "mks": "{m \\kk\\sigma}", "enk": "{\\varepsilon_\\nk}", "emkq": "{\\varepsilon_{m\\kk+\\qq}}", "qnu": "{\\qq \\nu}", "wqnu": "{\\omega_{\\qnu}}", "vnk": "{\\mathbf{v}_{n\\kk}}", "vmkq": "{\\mathbf{v}_{m\\kk+\\qq}}", "vnka": "{\\mathrm{v}_{n\\kk,\\alpha}}", "vnkb": "{\\mathrm{v}_{n\\kk,\\beta}}", "ef": "{\\varepsilon_F}", "gkkp": "{g_{mn\\nu}(\\kk,\\qq)}", "gkq": "{g_{mn\\nu}(\\kk,\\qq)}", "Go": "{G_0}", "Wo": "{W_0}", "Ueff": "{U_{\\text{eff}}}", "tee": "{\\tilde{\\epsilon}}", "ww": "{\\omega}", "tww": "{\\tilde\\omega}", "dd": "{\\,\\text{d}}", "vxc": "{v_\\xc}", "Ri": "{\\mcR^{-1}}", "Rit": "{\\mcR^{-1\\tau}}", "Si": "{\\mcS^{-1}}}", "Sit": "{\\Si^\\tau}}", "PDER": ["{\\dfrac{\\partial #1}{\\partial #2}}", 2], "FDER": ["{\\dfrac{\\delta #1}{\\delta #2}}", 2], "tPsi": "{\\tilde\\Psi}", "tpsi": "{\\tilde\\psi}", "tPhi": "{\\tilde\\Phi}", "tphi": "{\\tilde\\phi}", "tprj": "{\\tilde p}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lumi/lesson_post_process_1';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.2.0.min.js"></script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Post-proccessing of a LumiWork, multi phonon mode model." href="lesson_multi_phonons.html" />
+    <link rel="prev" title="Automatazing the ab-initio \(\Delta\)SCF procedure ; the LumiWork workflow" href="lesson_lumiwork.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lumi.png" class="logo__image only-light" alt="Lumi Book - Home"/>
+    <script>document.write(`<img src="../_static/lumi.png" class="logo__image only-dark" alt="Lumi Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Luminescence lineshape of point defects</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_lumiwork.html">Automatazing the ab-initio <span class="math notranslate nohighlight">\(\Delta\)</span>SCF procedure ; the LumiWork workflow</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Post-proccessing of a LumiWork, effective phonon mode model.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lesson_multi_phonons.html">Post-proccessing of a LumiWork, multi phonon mode model.</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lesson_lumi_examples.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/example_1.html">Example 1</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IFCs embedding</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ifc_emb/theory.html">IFCs embedding, theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ifc_emb/lesson_ifc_emb_abinitio.html">ab-initio computations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ifc_emb/lesson_ifc_emb_postprocess.html">post-processing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ifc_emb/lesson_ifc_emb_examples.html">Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ifc_emb/examples/example_1.html">Example 1 : vacancy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ifc_emb/examples/example_2.html">Example 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ifc_emb/examples/example_3.html">Example 1</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jbouquiaux/lumi_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jbouquiaux/lumi_book/edit/master/lumi_book/lumi/lesson_post_process_1.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jbouquiaux/lumi_book/issues/new?title=Issue%20on%20page%20%2Flumi/lesson_post_process_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lumi/lesson_post_process_1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Post-proccessing of a LumiWork, effective phonon mode model.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-energies-and-electronic-levels">Total energies and electronic levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-relaxation">Atomic relaxation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luminescent-properties-following-the-1d-ccm">Luminescent properties following the 1D-CCM</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><span class="math notranslate nohighlight">\(\newcommand{\AA}{\unicode{x212B}}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="post-proccessing-of-a-lumiwork-effective-phonon-mode-model">
+<h1>Post-proccessing of a LumiWork, effective phonon mode model.<a class="headerlink" href="#post-proccessing-of-a-lumiwork-effective-phonon-mode-model" title="Link to this heading">#</a></h1>
+<p>Now that the LumiWork completed, it is time to analyze the results. This first section shows how to do that following the so-called “single effective phonon mode model” or “one-dimensional configuration coordinate diagream” (1D-CCM). We recall that, in this model, it is assumed that there exists a fictious effective phonon mode whose eigenvectors follow exactly the ground-state to excited-state atomic relaxation, with an eigenfrequency computed with equation… of section …<br />
+For this analysis, we use the <span class="math notranslate nohighlight">\(\Delta\)</span>SCF computations shown in the previous tutorial to instantiate a <code class="docutils literal notranslate"><span class="pre">DeltaSCF</span></code> object :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abipy.lumi.deltaSCF</span> <span class="kn">import</span> <span class="n">DeltaSCF</span>
+<span class="n">scf_files</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;flow_deltaSCF/w0/t2/outdata/out_GSR.nc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;flow_deltaSCF/w0/t3/outdata/out_GSR.nc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;flow_deltaSCF/w0/t4/outdata/out_GSR.nc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;flow_deltaSCF/w0/t5/outdata/out_GSR.nc&quot;</span><span class="p">]</span>
+<span class="n">results</span><span class="o">=</span><span class="n">DeltaSCF</span><span class="o">.</span><span class="n">from_four_points_file</span><span class="p">(</span><span class="n">scf_files</span><span class="p">)</span> 
+<span class="c1"># or</span>
+<span class="c1"># results=DeltaSCF.from_json_file(&quot;flow_deltaSCF/w0/outdata/lumi.json&quot;)</span>
+<span class="c1"># or only two relaxations </span>
+<span class="c1"># results=DeltaSCF.from_relax_file([&quot;flow_deltaSCF/w0/t0/outdata/out_GSR.nc&quot;,</span>
+<span class="c1">#                                    &quot;flow_deltaSCF/w0/t1/outdata/out_GSR.nc&quot;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Energy units are given in eV, distance units in <span class="math notranslate nohighlight">\(\AA\)</span>.</p>
+</div>
+<section id="total-energies-and-electronic-levels">
+<h2>Total energies and electronic levels<a class="headerlink" href="#total-energies-and-electronic-levels" title="Link to this heading">#</a></h2>
+<p>The energies of the four relevant states are accessible with :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">ag_energy</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">ag_star_energy</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">ae_energy</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">ag_star_energy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-12938.531524261258 eV -12936.973286426179 eV -12938.444385578076 eV -12936.973286426179 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>The electronic eigenenergies, if computed at a single k-point, typically <span class="math notranslate nohighlight">\(\Gamma\)</span>,can be plotted with (spin up in black, spin down in red) :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_eigen_energies</span><span class="p">(</span><span class="n">scf_files</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/32f41c5925186b8681a65b12c2ed27e270ef3a67ac51de8dc2d523b75c7e03e2.png" src="../_images/32f41c5925186b8681a65b12c2ed27e270ef3a67ac51de8dc2d523b75c7e03e2.png" />
+</div>
+</div>
+<p>In the ground state, notice the 7 Eu<span class="math notranslate nohighlight">\(_{4f}\)</span> states located in the gap. In the excited state (simulated with constrained occupation, as shown with the (un)filled markers), the created 4f hole lowers the energy of an occupied 5d state, which is now located at the top of the gap. The 6 remaining occupied 4f states are pushed down in the VB. If you have computed the four band structures associated to each point, you can use <code class="docutils literal notranslate"><span class="pre">results.plot_four_BandStructures(nscf_files)</span></code> where <code class="docutils literal notranslate"><span class="pre">nscf_files</span></code> is the list of four band structures .nc files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nscf_files</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;nscf_files/t6/out_GSR.nc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;nscf_files/t7/out_GSR.nc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;nscf_files/t8/out_GSR.nc&quot;</span><span class="p">,</span> 
+           <span class="s2">&quot;nscf_files/t9/out_GSR.nc&quot;</span><span class="p">,]</span>
+<span class="n">results</span><span class="o">.</span><span class="n">plot_four_BandStructures</span><span class="p">(</span><span class="n">nscf_files</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/eff43edc7941a47281f6e5957b2d7af0ab7223bef7139ea9653196468dfa151b.png" src="../_images/eff43edc7941a47281f6e5957b2d7af0ab7223bef7139ea9653196468dfa151b.png" />
+</div>
+</div>
+<p>Notice the strong dispersion of the bands close the CB bottom due to an interaction between Eu<span class="math notranslate nohighlight">\(_{5d}\)</span> replica. Increasing the supercell size reduces this dispersion.</p>
+</section>
+<section id="atomic-relaxation">
+<h2>Atomic relaxation<a class="headerlink" href="#atomic-relaxation" title="Link to this heading">#</a></h2>
+<p>The ground/excited states structures are accessible with :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">structure_gs</span><span class="p">()</span>
+<span class="c1">#results.structures_ex()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure Summary
+Lattice
+    abc : 7.959000000054767 7.959000000054767 6.368000000202725
+ angles : 90.0 90.0 90.0
+ volume : 403.3852966263933
+      A : 7.959000000054767 0.0 0.0
+      B : 0.0 7.959000000054767 0.0
+      C : 0.0 0.0 6.368000000202725
+    pbc : True True True
+PeriodicSite: Eu (3.9795, 0.0000, 1.5920) [0.5000, 0.0000, 0.2500]
+PeriodicSite: Sr (3.9795, 0.0000, 4.7760) [0.5000, 0.0000, 0.7500]
+PeriodicSite: Sr (-0.0000, 3.9795, 0.0008) [-0.0000, 0.5000, 0.0001]
+PeriodicSite: Sr (-0.0000, 3.9795, 3.1832) [-0.0000, 0.5000, 0.4999]
+PeriodicSite: Li (1.0143, 6.5691, 1.5920) [0.1274, 0.8254, 0.2500]
+PeriodicSite: Li (1.0112, 6.5664, 4.7760) [0.1270, 0.8250, 0.7500]
+PeriodicSite: Li (6.9447, 1.3899, 1.5920) [0.8726, 0.1746, 0.2500]
+PeriodicSite: Li (6.9478, 1.3926, 4.7760) [0.8730, 0.1750, 0.7500]
+PeriodicSite: Li (1.3928, 1.0131, 0.0018) [0.1750, 0.1273, 0.0003]
+PeriodicSite: Li (1.3928, 1.0131, 3.1822) [0.1750, 0.1273, 0.4997]
+PeriodicSite: Li (6.5662, 6.9459, 0.0018) [0.8250, 0.8727, 0.0003]
+PeriodicSite: Li (6.5662, 6.9459, 3.1822) [0.8250, 0.8727, 0.4997]
+PeriodicSite: Al (2.7995, 5.4314, 0.0014) [0.3517, 0.6824, 0.0002]
+PeriodicSite: Al (2.7995, 5.4314, 3.1826) [0.3517, 0.6824, 0.4998]
+PeriodicSite: Al (5.1595, 2.5276, 0.0014) [0.6483, 0.3176, 0.0002]
+PeriodicSite: Al (5.1595, 2.5276, 3.1826) [0.6483, 0.3176, 0.4998]
+PeriodicSite: Al (2.5294, 2.7943, 1.5920) [0.3178, 0.3511, 0.2500]
+PeriodicSite: Al (2.5292, 2.7979, 4.7760) [0.3178, 0.3515, 0.7500]
+PeriodicSite: Al (5.4296, 5.1647, 1.5920) [0.6822, 0.6489, 0.2500]
+PeriodicSite: Al (5.4298, 5.1611, 4.7760) [0.6822, 0.6485, 0.7500]
+PeriodicSite: N (4.6505, 5.8173, -0.0005) [0.5843, 0.7309, -0.0001]
+PeriodicSite: N (4.6505, 5.8173, 3.1845) [0.5843, 0.7309, 0.5001]
+PeriodicSite: N (3.3085, 2.1417, -0.0005) [0.4157, 0.2691, -0.0001]
+PeriodicSite: N (3.3085, 2.1417, 3.1845) [0.4157, 0.2691, 0.5001]
+PeriodicSite: N (2.1505, 4.6489, 1.5920) [0.2702, 0.5841, 0.2500]
+PeriodicSite: N (2.1522, 4.6510, 4.7760) [0.2704, 0.5844, 0.7500]
+PeriodicSite: N (5.8085, 3.3101, 1.5920) [0.7298, 0.4159, 0.2500]
+PeriodicSite: N (5.8068, 3.3080, 4.7760) [0.7296, 0.4156, 0.7500]
+PeriodicSite: O (2.0097, 7.0596, -0.0005) [0.2525, 0.8870, -0.0001]
+PeriodicSite: O (2.0097, 7.0596, 3.1845) [0.2525, 0.8870, 0.5001]
+PeriodicSite: O (5.9493, 0.8994, -0.0005) [0.7475, 0.1130, -0.0001]
+PeriodicSite: O (5.9493, 0.8994, 3.1845) [0.7475, 0.1130, 0.5001]
+PeriodicSite: O (0.8978, 2.0143, 1.5920) [0.1128, 0.2531, 0.2500]
+PeriodicSite: O (0.8972, 2.0175, 4.7760) [0.1127, 0.2535, 0.7500]
+PeriodicSite: O (7.0612, 5.9447, 1.5920) [0.8872, 0.7469, 0.2500]
+PeriodicSite: O (7.0618, 5.9415, 4.7760) [0.8873, 0.7465, 0.7500]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is sometimes interesting to decompose the gs-ex displacements per specie :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">get_dataframe_species</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>symbol</th>
+      <th>mass</th>
+      <th>$\Delta R^2$</th>
+      <th>$\Delta Q^2$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sr</td>
+      <td>87.620000</td>
+      <td>0.000020</td>
+      <td>0.001736</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.000611</td>
+      <td>0.004240</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Eu</td>
+      <td>151.964000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.002379</td>
+      <td>0.064176</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.010490</td>
+      <td>0.146933</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.009172</td>
+      <td>0.146746</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>or per atom :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">get_dataframe_atoms</span><span class="p">(</span><span class="n">defect_symbol</span><span class="o">=</span><span class="s2">&quot;Eu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>symbol</th>
+      <th>mass</th>
+      <th>$\Delta R$</th>
+      <th>$\Delta Q^2$</th>
+      <th>$\Delta F$</th>
+      <th>dist. from defect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Eu</td>
+      <td>151.964000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.151473e-18</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sr</td>
+      <td>87.620000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.151473e-18</td>
+      <td>3.184000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Sr</td>
+      <td>87.620000</td>
+      <td>0.003147</td>
+      <td>0.000868</td>
+      <td>5.668443e-02</td>
+      <td>5.848495</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Sr</td>
+      <td>87.620000</td>
+      <td>0.003147</td>
+      <td>0.000868</td>
+      <td>5.668443e-02</td>
+      <td>5.848495</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.013931</td>
+      <td>0.001347</td>
+      <td>2.790292e-02</td>
+      <td>3.274783</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.006465</td>
+      <td>0.000290</td>
+      <td>4.421250e-03</td>
+      <td>4.570376</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.013931</td>
+      <td>0.001347</td>
+      <td>2.790292e-02</td>
+      <td>3.274783</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.006465</td>
+      <td>0.000290</td>
+      <td>4.421250e-03</td>
+      <td>4.570376</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.005897</td>
+      <td>0.000241</td>
+      <td>7.491245e-02</td>
+      <td>3.200975</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.005897</td>
+      <td>0.000241</td>
+      <td>7.491245e-02</td>
+      <td>3.200975</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.005897</td>
+      <td>0.000241</td>
+      <td>7.491245e-02</td>
+      <td>3.200975</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Li</td>
+      <td>6.941000</td>
+      <td>0.005897</td>
+      <td>0.000241</td>
+      <td>7.491245e-02</td>
+      <td>3.200975</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.011620</td>
+      <td>0.003643</td>
+      <td>2.632270e-02</td>
+      <td>3.211145</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.011620</td>
+      <td>0.003643</td>
+      <td>2.632270e-02</td>
+      <td>3.211145</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.011620</td>
+      <td>0.003643</td>
+      <td>2.632270e-02</td>
+      <td>3.211145</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.011620</td>
+      <td>0.003643</td>
+      <td>2.632270e-02</td>
+      <td>3.211145</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.010062</td>
+      <td>0.002732</td>
+      <td>9.742844e-02</td>
+      <td>3.148179</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.028601</td>
+      <td>0.022071</td>
+      <td>2.031258e-01</td>
+      <td>4.479922</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.010062</td>
+      <td>0.002732</td>
+      <td>9.742844e-02</td>
+      <td>3.148179</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Al</td>
+      <td>26.981539</td>
+      <td>0.028601</td>
+      <td>0.022071</td>
+      <td>2.031258e-01</td>
+      <td>4.479922</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.046122</td>
+      <td>0.029795</td>
+      <td>4.656482e-01</td>
+      <td>2.751901</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.046122</td>
+      <td>0.029795</td>
+      <td>4.656482e-01</td>
+      <td>2.751901</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.046122</td>
+      <td>0.029795</td>
+      <td>4.656482e-01</td>
+      <td>2.751901</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.046122</td>
+      <td>0.029795</td>
+      <td>4.656482e-01</td>
+      <td>2.751901</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.023441</td>
+      <td>0.007697</td>
+      <td>1.177240e-01</td>
+      <td>3.781826</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.021003</td>
+      <td>0.006179</td>
+      <td>9.130918e-02</td>
+      <td>4.941623</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.023441</td>
+      <td>0.007697</td>
+      <td>1.177240e-01</td>
+      <td>3.781826</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>N</td>
+      <td>14.006700</td>
+      <td>0.021003</td>
+      <td>0.006179</td>
+      <td>9.130918e-02</td>
+      <td>4.941623</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.047004</td>
+      <td>0.035349</td>
+      <td>4.181154e-01</td>
+      <td>2.687952</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.047004</td>
+      <td>0.035349</td>
+      <td>4.181154e-01</td>
+      <td>2.687952</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.047004</td>
+      <td>0.035349</td>
+      <td>4.181154e-01</td>
+      <td>2.687952</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.047004</td>
+      <td>0.035349</td>
+      <td>4.181154e-01</td>
+      <td>2.687952</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.005152</td>
+      <td>0.000425</td>
+      <td>1.622945e-01</td>
+      <td>3.681672</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.011860</td>
+      <td>0.002251</td>
+      <td>5.464372e-02</td>
+      <td>4.869160</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.005152</td>
+      <td>0.000425</td>
+      <td>1.622945e-01</td>
+      <td>3.681672</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>O</td>
+      <td>15.999400</td>
+      <td>0.011860</td>
+      <td>0.002251</td>
+      <td>5.464372e-02</td>
+      <td>4.869160</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You can plot these displacements (or ground state forces at the excited state atomic positions) as a function of the distance with respect to the defect. This allows to check the convergence of your calculation with respect to the supercell size. We see in our toy example that the results are not converged : the displacements are underestimated because of cancelation error due to periodic defect replica. Note that the forces decay faster with respect to the distance (this will be important in later tutorials).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_delta_R_distance</span><span class="p">(</span><span class="n">defect_symbol</span><span class="o">=</span><span class="s2">&quot;Eu&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f0adf0cf6fc95265b4f7e1de302205f96c636381ca50fd56d86af24d0db01099.png" src="../_images/f0adf0cf6fc95265b4f7e1de302205f96c636381ca50fd56d86af24d0db01099.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_delta_F_distance</span><span class="p">(</span><span class="n">defect_symbol</span><span class="o">=</span><span class="s2">&quot;Eu&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1333984417c5b54bdb5ba5d00dd4a6679112c69c19dcfc6e59018ecf09a43886.png" src="../_images/1333984417c5b54bdb5ba5d00dd4a6679112c69c19dcfc6e59018ecf09a43886.png" />
+</div>
+</div>
+<p>In order to visualize these displacements on a VESTA structure, you can follow these steps. (1) create a cif file with the ground state structure. (2) Open the structure with VESTA software and save it in a .vesta format (this should be done mannualy). (3) Use <code class="docutils literal notranslate"><span class="pre">draw_displacements_vesta()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">structure_gs</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;gs_stru.cif&quot;</span><span class="p">)</span>
+<span class="c1"># then open this cif with vesta, save it as .vesta file format</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">draw_displacements_vesta</span><span class="p">(</span><span class="n">in_path</span><span class="o">=</span><span class="s2">&quot;gs_stru.vesta&quot;</span><span class="p">,</span><span class="n">color_vector</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vesta files created and stored in : 
+ /Users/jbouquiaux/git/lumi_book/lumi_book/lumi/VESTA_FILES
+</pre></div>
+</div>
+</div>
+</div>
+<p>The resulting vesta file should look like :
+<a class="reference internal" href="../_images/draw_displacements_vesta.png"><img alt="../_images/draw_displacements_vesta.png" src="../_images/draw_displacements_vesta.png" style="width: 500px;" /></a></p>
+<p>You can modify the vectors drawing by changing the default arguments</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">draw_displacements_vesta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method draw_displacements_vesta in module abipy.lumi.deltaSCF:
+
+draw_displacements_vesta(in_path, mass_weighted=False, scale_vector=20, width_vector=0.3, color_vector=[255, 0, 0], centered=True, factor_keep_vectors=0.1, out_path=&#39;VESTA_FILES&#39;, out_filename=&#39;gs_ex_relaxation&#39;) method of abipy.lumi.deltaSCF.DeltaSCF instance
+    Draw the ground state to excited state atomic relaxation on a vesta structure. 
+    
+    Args:
+        in_path : path where the initial .vesta structure in stored, should correspond to the ground state relaxed structure. 
+        mass_weighted : If True, weight the displacements by the atomic masses. Draw the \Delta Q in that case.  
+        scale_vector : scaling factor of the vector modulus
+        width_vector : vector width
+        color_vector : color in rgb format
+        centered : center the vesta structure around [0,0,0]
+        factor_keep_vectors : draw only the eigenvectors with magnitude &gt; factor_keep_vectors * max(magnitude)
+        out_path : path where .vesta files with vector are stored
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="luminescent-properties-following-the-1d-ccm">
+<h2>Luminescent properties following the 1D-CCM<a class="headerlink" href="#luminescent-properties-following-the-1d-ccm" title="Link to this heading">#</a></h2>
+<p>One can vizualise the 1D-CCM and associated displaced parabolas with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">draw_displaced_parabolas</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6b2d8dc9a32e9fbc3482b5c321b5676ab73d1375e3fcc834ecb796756e913e0a.png" src="../_images/6b2d8dc9a32e9fbc3482b5c321b5676ab73d1375e3fcc834ecb796756e913e0a.png" />
+</div>
+</div>
+<p>Or get a dataframe (or dictionnary) with the main 1D-CCM parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="c1">#results.get_dict_results()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E_em</th>
+      <th>E_abs</th>
+      <th>E_zpl</th>
+      <th>E_fc_gs</th>
+      <th>E_fc_ex</th>
+      <th>Delta_S</th>
+      <th>Delta_R</th>
+      <th>Delta_Q</th>
+      <th>Eff_freq_gs</th>
+      <th>Eff_freq_ex</th>
+      <th>S_em</th>
+      <th>S_abs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>1.402772</td>
+      <td>1.558238</td>
+      <td>1.48991</td>
+      <td>0.087139</td>
+      <td>0.068328</td>
+      <td>0.155466</td>
+      <td>0.15057</td>
+      <td>0.603183</td>
+      <td>0.044747</td>
+      <td>0.039624</td>
+      <td>1.947347</td>
+      <td>1.724392</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, one can plot the luminescence lineshape at 0K :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">plot_lineshape_1D_zero_temp</span><span class="p">(</span><span class="n">energy_range</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]);</span>
+<span class="n">help</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">plot_lineshape_1D_zero_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6e7ed7f244787e4d7b293f89aa2c0a9426fe59b3675dc00a35d66955fbcb5098.png" src="../_images/6e7ed7f244787e4d7b293f89aa2c0a9426fe59b3675dc00a35d66955fbcb5098.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method plot_lineshape_1D_zero_temp in module abipy.lumi.deltaSCF:
+
+plot_lineshape_1D_zero_temp(energy_range=[0.5, 5], max_m=25, phonon_width=0.01, with_omega_cube=&#39;True&#39;, normalized=&#39;Area&#39;, ax=None, **kwargs) method of abipy.lumi.deltaSCF.DeltaSCF instance
+    Plot the the emission lineshape following the effective phonon 1D-CCM at T=0K.
+    
+    Args:
+        ax: |matplotlib-Axes| or None if a new figure should be created.
+        energy_range:  Energy range at which the intensities are computed, ex : [0.5,5]
+        max_m: Maximal vibrational state m considered
+        phonon_width: fwhm of each phonon peak, in eV
+        with_omega_cube: Considered or not the omega^3 dependence of the intensity
+        normlized: Normalisation procedure. &#39;Area&#39; if Area under the curve = 1. &#39;Sum&#39; if maximum of the curve = 1.
+    
+    Returns: |matplotlib-Figure|
+    
+    
+    
+    
+    Keyword arguments controlling the display of the figure:
+    
+    ================  ====================================================
+    kwargs            Meaning
+    ================  ====================================================
+    title             Title of the plot (Default: None).
+    show              True to show the figure (default: True).
+    savefig           &quot;abc.png&quot; or &quot;abc.eps&quot; to save the figure to a file.
+    size_kwargs       Dictionary with options passed to fig.set_size_inches
+                      e.g. size_kwargs=dict(w=3, h=4)
+    tight_layout      True to call fig.tight_layout (default: False)
+    ax_grid           True (False) to add (remove) grid from all axes in fig.
+                      Default: None i.e. fig is left unchanged.
+    ax_annotate       Add labels to  subplots e.g. (a), (b).
+                      Default: False
+    fig_close         Close figure. Default: False.
+    ================  ====================================================
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lumi"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lesson_lumiwork.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Automatazing the ab-initio <span class="math notranslate nohighlight">\(\Delta\)</span>SCF procedure ; the LumiWork workflow</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lesson_multi_phonons.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Post-proccessing of a LumiWork, multi phonon mode model.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-energies-and-electronic-levels">Total energies and electronic levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atomic-relaxation">Atomic relaxation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luminescent-properties-following-the-1d-ccm">Luminescent properties following the 1D-CCM</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. Bouquiaux and the AbiPy group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
