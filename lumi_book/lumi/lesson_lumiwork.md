@@ -31,10 +31,10 @@ Our goal is to compute the photo-luminescent properties of an impurity embedded 
 
 We need to compute the four states (energies and structures) highlighted in the figure below :
 
-1. Relaxed ground state
-2. Unrelaxed excited state
-3. Relaxed excited state
-4. Unrelaxed ground state
+1. Relaxed ground state (A$_g$)
+2. Unrelaxed excited state (A$_{e}^{*}$)
+3. Relaxed excited state (A$_{e}$)
+4. Unrelaxed ground state (A$_{g}^{*}$)
 
 <img src="images/CCM.png" width="600"> 
 

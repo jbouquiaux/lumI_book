@@ -187,9 +187,9 @@ print("frequencies :", freqs[ibands])
 
 from abipy.core.structure import Structure
 
-Structure(species=get_pmg_structure(ph_emb.supercell).species,
-          coords=get_pmg_structure(ph_emb.supercell).frac_coords,
-          lattice=get_pmg_structure(ph_emb.supercell).lattice).visualize()
+#Structure(species=get_pmg_structure(ph_emb.supercell).species,
+#          coords=get_pmg_structure(ph_emb.supercell).frac_coords,
+#          lattice=get_pmg_structure(ph_emb.supercell).lattice).visualize()
 
 # visualize the structure with vesta
 # Save it in vesta format. TO COMPLETE
